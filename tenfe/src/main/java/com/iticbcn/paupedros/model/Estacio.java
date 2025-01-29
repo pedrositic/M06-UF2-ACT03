@@ -38,11 +38,11 @@ public class Estacio {
     this.nom = nom;
   }
 
-  public List<Trajecte> getTrajectes() {
+  public Set<Trajecte> getTrajectes() {
     return trajectes;
   }
 
-  public void setTrajectes(List<Trajecte> trajectes) {
+  public void setTrajectes(Set<Trajecte> trajectes) {
     this.trajectes = trajectes;
   }
 }

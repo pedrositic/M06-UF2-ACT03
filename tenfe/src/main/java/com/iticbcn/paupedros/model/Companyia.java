@@ -1,9 +1,14 @@
 package com.iticbcn.paupedros.model;
 
-import jakarta.persistence.*;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Companyia {
@@ -34,11 +39,11 @@ public class Companyia {
     this.nom = nom;
   }
 
-  public List<Tren> getTrens() {
+  public Set<Tren> getTrens() {
     return trens;
   }
 
-  public void setTrens(List<Tren> trens) {
+  public void setTrens(Set<Tren> trens) {
     this.trens = trens;
   }
 }
