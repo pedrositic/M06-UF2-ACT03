@@ -1,7 +1,7 @@
 package com.iticbcn.paupedros.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Estacio {
   private String nom;
 
   @ManyToMany(mappedBy = "estacions")
-  private List<Trajecte> trajectes = new ArrayList<>();
+  private Set<Trajecte> trajectes = new HashSet<>();
 
   // Getters and Setters
 

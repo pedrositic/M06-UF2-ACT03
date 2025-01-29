@@ -1,8 +1,9 @@
 package com.iticbcn.paupedros.model;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Tren {
@@ -17,7 +18,7 @@ public class Tren {
   private Companyia companyia;
 
   @OneToMany(mappedBy = "tren", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Trajecte> trajectes = new ArrayList<>();
+  private Set<Trajecte> trajectes = new HashSet<>();
 
   // Getters and Setters
 

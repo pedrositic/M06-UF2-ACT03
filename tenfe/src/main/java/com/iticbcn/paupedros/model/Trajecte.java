@@ -1,8 +1,8 @@
 package com.iticbcn.paupedros.model;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 public class Trajecte {
@@ -19,7 +19,7 @@ public class Trajecte {
 
   @ManyToMany(cascade = CascadeType.ALL)
   @JoinTable(name = "trajecte_estacio", joinColumns = @JoinColumn(name = "trajecte_id"), inverseJoinColumns = @JoinColumn(name = "estacio_id"))
-  private List<Estacio> estacions = new ArrayList<>();
+  private Set<Estacio> estacions = new HashSet<>();
 
   // Getters and Setters
 
