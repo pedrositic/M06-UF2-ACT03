@@ -24,6 +24,7 @@ public class Main {
             Tren tren = new Tren();
             tren.setModel("Class 430");
             tren.setCompanyia(companyia);
+            session.persist(tren);
 
             companyia.getTrens().add(tren);
             session.persist(companyia);

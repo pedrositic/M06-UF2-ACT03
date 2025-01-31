@@ -3,6 +3,7 @@ package com.iticbcn.paupedros.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Estacio {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Column(name="nom", nullable=false, unique=true)
   private String nom;
 
   @ManyToMany(mappedBy = "estacions")
