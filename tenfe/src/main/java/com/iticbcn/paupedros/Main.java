@@ -1,6 +1,7 @@
 package com.iticbcn.paupedros;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.iticbcn.paupedros.model.Companyia;
@@ -10,11 +11,10 @@ import com.iticbcn.paupedros.model.Tren;
 
 public class Main {
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        SessionFactory session = HibernateUtil.getSessionFactory();
         Transaction transaction = null;
 
         try {
-            transaction = session.beginTransaction();
 
             // Crear una nueva compañía
             Companyia companyia = new Companyia();
