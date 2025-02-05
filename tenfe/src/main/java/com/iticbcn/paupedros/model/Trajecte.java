@@ -31,6 +31,8 @@ public class Trajecte {
   @JoinTable(name = "trajecte_estacio", joinColumns = @JoinColumn(name = "trajecte_id"), inverseJoinColumns = @JoinColumn(name = "estacio_id"))
   private Set<Estacio> estacions = new HashSet<>();
 
+  public Trajecte(){}
+
   // Getters and Setters
 
   public Long getId() {

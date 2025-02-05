@@ -33,7 +33,7 @@ public class CompanyiaDAO {
     }
   }
 
-  public Companyia obtenirCompanyia(int companyiaId) {
+  public Companyia obtenirCompanyia(Long companyiaId) {
     Companyia companyia = null;
     try (Session session = sessionFactory.openSession()) {
       companyia = session.find(Companyia.class, companyiaId);

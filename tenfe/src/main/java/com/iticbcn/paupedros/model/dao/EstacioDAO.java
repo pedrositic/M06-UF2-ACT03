@@ -34,15 +34,15 @@ public class EstacioDAO {
   }
 
   public Estacio obtenirEstacio(int EstacioId) {
-    Estacio Estacio = null;
+    Estacio estacio = null;
     try (Session session = sessionFactory.openSession()) {
-      Estacio = session.find(Estacio.class, EstacioId);
+      estacio = session.find(Estacio.class, EstacioId);
     } catch (HibernateException e) {
       System.err.println("Error en Hibernate: " + e.getMessage());
     } catch (Exception e) {
       System.err.println("Error inesperado: " + e.getMessage());
     }
-    return Estacio;
+    return estacio;
   }
 
   public void actualitzarEstacio(Estacio inst) {

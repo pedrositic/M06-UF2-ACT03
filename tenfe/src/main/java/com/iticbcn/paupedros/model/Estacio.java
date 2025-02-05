@@ -22,6 +22,8 @@ public class Estacio {
   @ManyToMany(mappedBy = "estacions")
   private Set<Trajecte> trajectes = new HashSet<>();
 
+  public Estacio(){}
+
   // Getters and Setters
 
   public Long getId() {

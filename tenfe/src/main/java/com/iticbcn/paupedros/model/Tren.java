@@ -22,11 +22,22 @@ public class Tren {
   private String model;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "companyia_id")
+  @JoinColumn(name = "companyia_id", nullable = false)
   private Companyia companyia;
 
   @OneToMany(mappedBy = "tren", cascade = CascadeType.ALL, orphanRemoval = true)
   private Set<Trajecte> trajectes = new HashSet<>();
+
+  public Tren(){}
+
+  public Tren(String model) {
+    this.model = model;
+  }
+
+  public Tren(String model, Companyia comp) {
+    this.model = model;
+    this.companyia = comp;
+  }
 
   // Getters and Setters
 
@@ -61,4 +72,14 @@ public class Tren {
   public void setTrajectes(Set<Trajecte> trajectes) {
     this.trajectes = trajectes;
   }
+
+  @Override
+  public String toString() {
+    return "Tren {" +
+        "id=" + id +
+        ", model='" + model + '\'' +
+        ", companyia=" + (companyia != null ? companyia.getNom() : "Sense companyia") +
+        '}';
+  }
+
 }
