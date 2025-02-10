@@ -33,7 +33,7 @@ public class TrenDAO {
     }
   }
 
-  public Tren obtenirTren(int TrenId) {
+  public Tren obtenirTren(Long TrenId) {
     Tren Tren = null;
     try (Session session = sessionFactory.openSession()) {
       Tren = session.find(Tren.class, TrenId);

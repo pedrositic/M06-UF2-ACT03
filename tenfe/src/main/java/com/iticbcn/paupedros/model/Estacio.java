@@ -16,13 +16,18 @@ public class Estacio {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name="nom", nullable=false, unique=true)
+  @Column(name = "nom", nullable = false, unique = true)
   private String nom;
 
   @ManyToMany(mappedBy = "estacions")
   private Set<Trajecte> trajectes = new HashSet<>();
 
-  public Estacio(){}
+  public Estacio() {
+  }
+
+  public Estacio(String nom) {
+    this.nom = nom;
+  }
 
   // Getters and Setters
 
@@ -48,5 +53,14 @@ public class Estacio {
 
   public void setTrajectes(Set<Trajecte> trajectes) {
     this.trajectes = trajectes;
+  }
+
+  @Override
+  public String toString() {
+    return "Estacio {" +
+        "id=" + id +
+        ", nom='" + nom + '\'' +
+        ", nombre de trajectes = [no inicialitzats]" +
+        '}';
   }
 }

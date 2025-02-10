@@ -23,15 +23,21 @@ public class Trajecte {
   private String origen;
   private String desti;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "tren_id")
   private Tren tren;
 
-  @ManyToMany(cascade = CascadeType.ALL)
+  @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinTable(name = "trajecte_estacio", joinColumns = @JoinColumn(name = "trajecte_id"), inverseJoinColumns = @JoinColumn(name = "estacio_id"))
   private Set<Estacio> estacions = new HashSet<>();
 
-  public Trajecte(){}
+  public Trajecte() {
+  }
+
+  public Trajecte(String origen, String desti) {
+    this.origen = origen;
+    this.desti = desti;
+  }
 
   // Getters and Setters
 
@@ -73,5 +79,16 @@ public class Trajecte {
 
   public void setEstacions(Set<Estacio> estacions) {
     this.estacions = estacions;
+  }
+
+  @Override
+  public String toString() {
+    return "Trajecte{" +
+        "id=" + id +
+        ", origen='" + origen + '\'' +
+        ", desti='" + desti + '\'' +
+        ", tren=" + (tren != null ? tren.getId() : "null") +
+        ", estacions=" + estacions +
+        '}';
   }
 }

@@ -33,7 +33,7 @@ public class EstacioDAO {
     }
   }
 
-  public Estacio obtenirEstacio(int EstacioId) {
+  public Estacio obtenirEstacio(Long EstacioId) {
     Estacio estacio = null;
     try (Session session = sessionFactory.openSession()) {
       estacio = session.find(Estacio.class, EstacioId);
